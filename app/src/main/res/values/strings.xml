@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Sumador</string>
+    <string name="txt_valor1">Operando1</string>
+    <string name="text_valor2">Operando2</string>
 </resources>
