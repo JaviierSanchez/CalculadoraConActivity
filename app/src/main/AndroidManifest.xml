@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Sumador"
         tools:targetApi="31">
         <activity
+            android:name=".ResultadoOperacion"
+            android:exported="false" />
+        <activity
+            android:name=".AcercaDe"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -20,7 +26,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
     </application>
 
 </manifest>

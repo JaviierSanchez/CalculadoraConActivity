@@ -41,68 +41,56 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="336dp"
+        android:layout_marginTop="424dp"
         android:layout_marginEnd="40dp"
         android:onClick="operar"
         android:text="OPERAR"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:text="Resultado:"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <TextView
-        android:id="@+id/editTextResultado"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="120dp"
-        android:gravity="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
     <RadioGroup
-        android:layout_width="183dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="144dp"
+        android:layout_width="201dp"
+        android:layout_height="185dp"
+        android:layout_marginTop="124dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <RadioButton
             android:id="@+id/radioButtonSumar"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
-            android:gravity="center"
             android:text="Sumar"
             tools:ignore="MissingConstraints" />
 
         <RadioButton
             android:id="@+id/radioButtonRestar"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:text="Restar"
             tools:ignore="MissingConstraints" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMultiplicar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Multiplicar"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDividir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dividir"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </RadioGroup>
 
@@ -110,7 +98,6 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
         android:layout_marginBottom="86dp"
         android:onClick="acercaDe"
         android:text="Acerca de"
@@ -118,22 +105,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextResultado"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
         android:layout_marginBottom="86dp"
         android:onClick="salirApp"
         android:text="Salir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextResultado"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toEndOf="@+id/button2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

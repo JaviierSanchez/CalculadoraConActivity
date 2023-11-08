@@ -6,6 +6,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -23,12 +24,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void operar(View vista) {
+   public void operar(View vista) {
         int numero1 = 0;
         int numero2 = 0;
         int res = 0;
-        RadioButton sum = (RadioButton) findViewById(R.id.radioButtonSumar);
-        RadioButton restar = (RadioButton) findViewById(R.id.radioButtonRestar);
+        RadioButton sum =  findViewById(R.id.radioButtonSumar);
+        RadioButton restar =  findViewById(R.id.radioButtonRestar);
+        RadioButton multi = findViewById(R.id.radioButtonMultiplicar);
+        RadioButton divi = findViewById(R.id.radioButtonDividir);
 
         EditText valor1 = (EditText) findViewById(R.id.editTextValor1);
         try {
@@ -50,27 +53,37 @@ public class MainActivity extends AppCompatActivity {
         if (restar.isChecked()) {
             res = numero1 - numero2;
         }
-        TextView myTextView = (TextView) findViewById(R.id.editTextResultado);
-        String cadena = String.valueOf(res);
-        myTextView.setText(cadena);
+        if(multi.isChecked()){
+            res = numero1 * numero2;
+        }
+        if (divi.isChecked()){
+            if(numero2 == 0){
+                Toast.makeText(this,"No se puede dividir entre 0",Toast.LENGTH_SHORT).show();
+            }else {
+                res = numero1 / numero2;
+            }
+
+        }
+
+
+
+        Intent i = new Intent(this,ResultadoOperacion.class);
+        i.putExtra("resultado",res);
+        startActivity(i);
 
     }
 
+
+
+
+
+
+
     public void acercaDe(View vista) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("Programador")
-                .setMessage("Javier Sánchez Cerrato")
-                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+        Intent irActivity = new Intent(MainActivity.this, AcercaDe.class);
 
-
-                    }
-                });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        startActivity(irActivity);
     }
 
     public void salirApp(View vista) {
@@ -78,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
 
         builder.setTitle("Salir")
                 .setMessage("¿Estás seguro de que quieres salir?")
+                .setPositiveButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                })
                 .setNegativeButton("Salir", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
